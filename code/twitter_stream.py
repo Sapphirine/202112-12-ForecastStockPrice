@@ -11,10 +11,10 @@ import pandas as pd
 import os
 import time
 
-ACCESS_TOKEN = '898953167454457857-hS9q5w45XwnSR4TLVWgy5WObFy5bHc5'     # your access token
-ACCESS_SECRET = 'cOITj90vdFOsDutvt49Ct8D3yYAN1TUg11Mo2ka7DeqCB'    # your access token secret
-CONSUMER_KEY = 'JDHHKwJmQbCdzeT9Tz9WgHYoh'     # your API key
-CONSUMER_SECRET = '1EnKriNtN02xjXLVp8fzA5wZdexBAS7QnK139f8ZyD2yjQNyEM'  # your API secret key
+ACCESS_TOKEN = ''     # your access token
+ACCESS_SECRET = ''    # your access token secret
+CONSUMER_KEY = ''     # your API key
+CONSUMER_SECRET = ''  # your API secret key
 
 class tweetStreamer(Stream):
     def __init__(self, max_entries, **args):
