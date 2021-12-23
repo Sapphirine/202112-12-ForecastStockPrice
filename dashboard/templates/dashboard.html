@@ -1,0 +1,58 @@
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>Stock Predictor</title>
+</head>
+<link rel="stylesheet" href="{% static "css/dashboard.css" %}">
+<body>
+<h1>Stock Predictor</h1>
+<h2>Date: 12/17/2021</h2>
+<div id='dashboard'></div>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="{% static "js/dashboard.js" %}"></script>
+
+<script>
+    var Top = {{ top5 | safe }};
+    var Bottom = {{ bottom5 | safe }};
+    function tabulate(data, columns, name) {
+		var table = d3.select('body').append('table').attr("dx", 10).attr("dy", 10).attr("class", name);
+		var thead = table.append('thead');
+		var	tbody = table.append('tbody');
+
+		// append the header row
+		thead.append('tr')
+		  .selectAll('th')
+		  .data(columns).enter()
+		  .append('th')
+		    .text(function (column) { return column; });
+
+		// create a row for each object in the data
+		var rows = tbody.selectAll('tr')
+		  .data(data)
+		  .enter()
+		  .append('tr');
+
+		// create a cell in each row for each column
+		var cells = rows.selectAll('td')
+		  .data(function (row) {
+		    return columns.map(function (column) {
+		      return {column: column, value: row[column]};
+		    });
+		  })
+		  .enter()
+		  .append('td')
+		    .text(function (d) { return d.value; });
+
+	  return table;
+	}
+
+	// render the table(s)
+	var columns = ['stock', 'sentiment score', 'probability', 'yesterday']
+	tabulate(Top, columns, "top"); // 4 column table
+    tabulate(Bottom, columns, "bottom"); 
+</script>
+
+</body>
+</html>

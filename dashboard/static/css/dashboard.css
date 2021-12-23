@@ -1,0 +1,99 @@
+body{
+    width:1060px;
+    margin:50px;
+}
+path {  stroke: #fff; }
+path:hover {  opacity:0.9; }
+rect:hover {  fill:blue; }
+.axis {  font: 10px sans-serif; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+.legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+.legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+
+table.top {
+    border-spacing: 5;
+    width: 100%;
+}
+table.top tr {
+    text-align: center;
+}
+table.top th {
+    padding: 10px;
+}
+table.top tbody tr:nth-child(odd){
+    background-color: #eee
+}
+table.top thead {
+    background-color: green;
+    color: white;
+}
+table.top thead th:first-child {
+    border-radius: 5px 0 0 0;
+    border: 1px solid green;
+}
+table.top thead th:last-child {
+    border-radius: 0 5px 0 0;
+    border-right: 1px solid green;
+}
+table.top tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+table.top tbody tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+table.bottom {
+    border-spacing: 5;
+    width: 100%;
+}
+table.bottom tr {
+    text-align: center;
+}
+table.bottom th {
+    padding: 10px;
+}
+table.bottom tbody tr:nth-child(odd){
+    background-color: #eee
+}
+table.bottom thead {
+    background-color: red;
+    color: white;
+}
+table.bottom thead th:first-child {
+    border-radius: 5px 0 0 0;
+    border: 1px solid red;
+}
+table.bottom thead th:last-child {
+    border-radius: 0 5px 0 0;
+    border-right: 1px solid red;
+}
+table.bottom tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+table.bottom tbody tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
